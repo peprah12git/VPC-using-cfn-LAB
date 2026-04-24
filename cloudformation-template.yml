@@ -517,6 +517,8 @@ Resources:
           Value: Public-Web
         - Key: AZp
           Value: AZ1
+          - Key: AZ
+            Value: AZ1
 
   PublicEC2Instance2:
     Type: AWS::EC2::Instance

@@ -532,7 +532,7 @@ Resources:
       # No KeyName — SSH access is prohibited; use Session Manager only
       UserData:
         Fn::Base64: !Sub |
-          #!/bin/bpash
+          #!/bin/bash
           set -ex
 
           # Update system packages

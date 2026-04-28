@@ -95,6 +95,7 @@ Resources:
 
   # ---------------------------------------------------------------------------
   # SUBNETS
+  #Two publlic subnets (one in each AZ) and two private subnets (one in each AZ)
   # ---------------------------------------------------------------------------
   PublicSubnet1:
     Type: AWS::EC2::Subnet

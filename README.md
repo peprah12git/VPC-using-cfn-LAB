@@ -97,25 +97,21 @@ This project deploys a **production-grade, fault-tolerant VPC** on AWS using Inf
 ### Step 1 — Clone this repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/ha-vpc-lab.git
-cd ha-vpc-lab
+git clone https://github.com/peprah12git/VPC-using-cfn-LAB.git
+cd VPC-using-cfn-LAB
 ```
 
-### Step 2 — Update your name in the template
-
-Open `cloudformation-template.yaml` and replace `Your Full Name` in both UserData blocks (Web Server 1 and Web Server 2) with your actual full name.
-
-### Step 3 — Deploy the stack
+### Step 2 — Deploy the stack
 
 ```bash
 aws cloudformation deploy \
-  --template-file cloudformation-template.yaml \
+  --template-file cloudformation-template.yml \
   --stack-name ha-vpc-lab \
   --capabilities CAPABILITY_NAMED_IAM \
   --region us-east-1
 ```
 
-### Step 4 — Retrieve outputs
+### Step 3 — Retrieve outputs
 
 ```bash
 aws cloudformation describe-stacks \
@@ -210,7 +206,7 @@ You can override default values at deploy time:
 
 ```bash
 aws cloudformation deploy \
-  --template-file cloudformation-template.yaml \
+  --template-file cloudformation-template.yml \
   --stack-name ha-vpc-lab \
   --capabilities CAPABILITY_NAMED_IAM \
   --parameter-overrides \
@@ -228,6 +224,7 @@ aws cloudformation deploy \
 | `PrivateSubnet1CIDR` | `10.0.11.0/24` | Private Subnet AZ1 |
 | `PrivateSubnet2CIDR` | `10.0.12.0/24` | Private Subnet AZ2 |
 | `InstanceType` | `t3.micro` | EC2 instance type |
+| `AmazonLinuxAMI` | `/aws/service/ami-amazon-linux-latest/al2023-ami-kernel-default-x86_64` | Amazon Linux 2023 AMI (resolved dynamically via SSM) |
 
 ---
 
@@ -253,5 +250,5 @@ aws cloudformation delete-stack --stack-name ha-vpc-lab
 
 ## Author
 
-**Your Full Name**  
+**Emmanuel Mensah Peprah**  
 Lab: Highly Available Multi-AZ VPC Architecture Lab
